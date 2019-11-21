@@ -69,7 +69,9 @@ class LinkedList
   
   # Time complexity - O(n)
   # Space complexity - O(1)
-  def get_at_index(index)
+  def get_at_index(index) 
+    return nil if head.nil?
+    
     current = head
     
     index.times do
