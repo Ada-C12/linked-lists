@@ -71,9 +71,13 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def get_at_index(index)
-    
+    count = 0
+    current = @head
+    until count == index || current.nil?
+      current = current.next
+      count += 1
+    end
+    current_data = current.nil? ? nil : current.data
+    return current_data
   end
 end
-
-@list = LinkedList.new
-@list.add_last(2)
