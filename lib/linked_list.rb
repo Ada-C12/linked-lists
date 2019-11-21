@@ -20,8 +20,8 @@ class LinkedList
     return @head.data
   end
   
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def length
     count = 0
     current = @head
