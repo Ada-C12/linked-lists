@@ -41,9 +41,10 @@ class LinkedList
     return get_last(node.next)
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
-  def get_at_index(index)
-
+  # Time complexity - O(index)
+  # Space complexity - O(index)
+  def get_at_index(index, node=@head)
+    return node&.data unless node&.next && index > 0
+    return get_at_index(index.pred, node.next)
   end
 end
