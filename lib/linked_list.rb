@@ -37,8 +37,7 @@ class LinkedList
   # Time complexity - O(n)
   # Space complexity - O(n)
   def get_last(node=@head)
-    return nil unless node
-    return node.data unless node.next
+    return node&.data unless node&.next
     return get_last(node.next)
   end
 
