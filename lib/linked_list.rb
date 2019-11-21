@@ -55,8 +55,8 @@ class LinkedList
     end
   end
   
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def get_last
     current = head
     
@@ -67,9 +67,15 @@ class LinkedList
     return current.data
   end
   
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def get_at_index(index)
+    current = head
     
+    index.times do
+      current = current.next
+    end
+    
+    return current.data
   end
 end
