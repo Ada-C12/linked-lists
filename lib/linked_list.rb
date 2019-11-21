@@ -16,15 +16,15 @@ class LinkedList
   # Time complexity - O(1)
   # Space complexity - O(1)
   def get_first
-    return nil if @head.nil?
-    return @head.data
+    return nil if head.nil?
+    return head.data
   end
   
   # Time complexity - O(n)
   # Space complexity - O(1)
   def length
     count = 0
-    current = @head
+    current = head
     while !current.nil?
       count += 1
       current = current.next
@@ -38,10 +38,10 @@ class LinkedList
     # make a new last node
     new_last_node = Node.new(data, nil)
     # get the last node
-    current = @head
-    if @head.nil?
+    current = head
+    if head.nil?
       @head = new_last_node
-      last_node = @head
+      last_node = head
     else
       while !current.nil?
         last_node = current
@@ -56,9 +56,9 @@ class LinkedList
   # Time complexity - O(1) if there are no nodes, O(n) elsewise
   # Space complexity - O(1)
   def get_last
-    current = @head
-    if @head.nil?
-      last_node = @head
+    current = head
+    if head.nil?
+      last_node = head
     else
       while !current.nil?
         last_node = current
@@ -72,7 +72,7 @@ class LinkedList
   # Space complexity - O(1)
   def get_at_index(index)
     count = 0
-    current = @head
+    current = head
     until count == index || current.nil?
       current = current.next
       count += 1
