@@ -21,10 +21,20 @@ class LinkedList
     return @head.data
   end
   
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n). N is the length of the list.
+  # Space complexity - 0(1)
   def length
-    return 0
+    return 0 if head.nil?
+    
+    current = head  
+    length = 1
+    
+    while !current.next.nil?
+      length += 1
+      current = current.next
+    end
+    
+    return length
   end
   
   # Time complexity - ?
