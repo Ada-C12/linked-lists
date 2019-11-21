@@ -68,8 +68,8 @@ class LinkedList
     return last_node.data
   end
   
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1) if there are no nodes, O(n) elsewise
+  # Space complexity - O(1)
   def get_at_index(index)
     count = 0
     current = @head
