@@ -26,16 +26,20 @@ class LinkedList
     return length(node.next, len.succ)
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
-  def add_last(data)
-
+  # Time complexity - O(n)
+  # Space complexity - O(n)
+  def add_last(data, node=@head)
+    return add_first(data) unless node
+    return node.next = Node.new(data) unless node.next
+    return add_last(data, node.next)
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
-  def get_last
-
+  # Time complexity - O(n)
+  # Space complexity - O(n)
+  def get_last(node=@head)
+    return nil unless node
+    return node.data unless node.next
+    return get_last(node.next)
   end
 
   # Time complexity - ?
