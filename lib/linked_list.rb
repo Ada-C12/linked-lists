@@ -19,10 +19,11 @@ class LinkedList
     @head&.data
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
-  def length
-    return 0
+  # Time complexity - O(n)
+  # Space complexity - O(n)
+  def length(node=@head, len=0)
+    return len unless node
+    return length(node.next, len.succ)
   end
 
   # Time complexity - ?
