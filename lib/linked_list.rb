@@ -35,13 +35,37 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def add_last(data)
-    
+    # make a new last node
+    new_last_node = Node.new(data, nil)
+    # get the last node
+    current = @head
+    if @head.nil?
+      @head = new_last_node
+      last_node = @head
+    else
+      while !current.nil?
+        last_node = current
+        current = current.next
+      end
+      # make the last node point to a new last node
+      last_node.next = new_last_node
+    end
+    return new_last_node
   end
   
   # Time complexity - ?
   # Space complexity - ?
   def get_last
-    
+    current = @head
+    if @head.nil?
+      last_node = @head
+    else
+      while !current.nil?
+        last_node = current
+        current = current.next
+      end
+    end
+    return last_node.data
   end
   
   # Time complexity - ?
@@ -50,3 +74,6 @@ class LinkedList
     
   end
 end
+
+@list = LinkedList.new
+@list.add_last(2)
