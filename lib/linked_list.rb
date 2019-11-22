@@ -1,5 +1,4 @@
 require_relative 'node'
-require 'awesome_print'
 
 class LinkedList
   attr_reader :head
