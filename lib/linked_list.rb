@@ -2,15 +2,18 @@ require_relative 'node'
 
 class LinkedList
   attr_reader :head
+  attr_reader :size
   
   def initialize
     @head = nil
+    @size = 0
   end
   
   # Time complexity - O(1)
   # Space complexity - O(1)
   def add_first(data)
     @head = Node.new(data, head)
+    @size +=1
   end
   
   # Time complexity - O(1)
@@ -22,10 +25,10 @@ class LinkedList
     return nil
   end
   
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(1)
   def length
-    return 0
+    return size
   end
   
   # Time complexity - ?
