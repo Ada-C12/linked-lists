@@ -15,7 +15,7 @@ class LinkedList
   # Space complexity - O(1)
   def add_first(data)
     @head = Node.new(data, head)
-    @tail = head  if !tail
+    @tail = head if !tail
     
     @size +=1
   end
@@ -52,9 +52,16 @@ class LinkedList
     return nil
   end
   
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(n)
   def get_at_index(index)
-    
+    current = head
+    count = 0
+    while current && count < size
+      return current.data if count == index
+      count += 1
+      current = current.next
+    end
+    return nil
   end
 end
