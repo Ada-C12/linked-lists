@@ -7,21 +7,21 @@ class LinkedList
     @head = nil
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(1)
   def add_first(data)
     @head = Node.new(data, @head)
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(1)
   def get_first
     return nil if @head.nil?
     return @head.data
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def length
     return 0 if @head.nil?
     count = 0
@@ -33,8 +33,8 @@ class LinkedList
     return count
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def add_last(data)
     if @head.nil?
       @head = Node.new(data, nil)
@@ -47,8 +47,8 @@ class LinkedList
     end
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity O(1)
   def get_last
     cur = @head
     while cur.next != nil
@@ -57,8 +57,8 @@ class LinkedList
     return cur.data
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def get_at_index(index)
     return nil if index > self.length-1
     count = 0
@@ -69,5 +69,5 @@ class LinkedList
     end
     return cur.data
   end
-  
+
 end
