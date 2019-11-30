@@ -78,6 +78,7 @@ describe LinkedList do
       expect(@list.get_last).must_equal 2
       
       @list.add_last(3)
+      puts "b"
       expect(@list.get_first).must_equal 2
       expect(@list.get_last).must_equal 3
       expect(@list.length).must_equal 2

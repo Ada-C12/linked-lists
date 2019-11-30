@@ -38,29 +38,37 @@ class LinkedList
   # Time complexity - O(n)
   # Space complexity - O(1)
   def add_last(data)
-    curr_tail = self.get_last
+    curr_tail = self.get_last_node
     
     if !curr_tail && !head
       self.add_first(data)
     else
-      curr_tail.next = Node.new(data, nil)
+      curr_tail.next = Node.new(data)
     end
   end
   
   # Time complexity - O(n)
   # Space complexity - O(1)
   def get_last
+    last_node = self.get_last_node
+    return last_node.data if last_node
+    return nil
+  end
+  
+  # Time = O(n)
+  # space = O(1)
+  def get_last_node
     return nil if !head
     
     curr = head
     prev = nil    
     
-    until curr.next.nil?
+    until curr.nil?
       prev = curr
       curr = curr.next
     end
     
-    return curr
+    return prev
   end
   
   # Time complexity - O(n)
@@ -83,30 +91,3 @@ class LinkedList
     end
   end
 end
-
-list = LinkedList.new()
-
-puts list.get_last
-
-list.add_first(5)
-
-puts list.get_last.data
-
-list.add_first(4)
-list.add_first(3)
-list.add_first(2)
-
-puts list.get_last.data
-
-list.add_last(6)
-list.add_first(1)
-puts list.get_last.data
-
-
-puts
-curr = list.head
-while curr
-  print "#{curr.data} ->"
-  curr = curr.next
-end
-puts
