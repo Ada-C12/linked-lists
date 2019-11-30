@@ -1,24 +1,17 @@
 require_relative 'node'
 
 class LinkedList
-  attr_reader :head, :tail, :length
+  attr_reader :head
+  attr_accessor :tail, :length
   
   def initialize
     @head = nil
-    
-    # I added this, hee hee
-    @tail = nil
-    @length = 0
   end
   
   # Time complexity - O(1)
   # Space complexity - O(1)
   def add_first(data)
     @head = Node.new(data, head)
-    
-    # just for fun
-    @tail ||= @head
-    incr_length
   end
   
   # Time complexity - O(1)
@@ -42,53 +35,36 @@ class LinkedList
     return count
   end
   
-  def length_for_fun
-    # O(1) space & time, b/c I did accounting everytime I added/removed a node
-    return @length
-  end
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   # Time complexity - O(n)
   # Space complexity - O(1)
   def add_last(data)
     curr_tail = self.get_last
-    @tail = Node.new(data, curr_tail)
     
-    incr_length
+    if !curr_tail && !head
+      self.add_first(data)
+    else
+      curr_tail.next = Node.new(data, nil)
+    end
   end
   
   # Time complexity - O(n)
   # Space complexity - O(1)
   def get_last
+    return nil if !head
+    
     curr = head
-    prev = nil
+    prev = nil    
     
     until curr.next.nil?
       prev = curr
       curr = curr.next
     end
     
-    return @tail
+    return curr
   end
   
-  def get_last_for_fun
-    return @tail
-  end
-  
-  # def get_last_for_fun
-  #   return @tail.data
-  # end
-  
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def get_at_index(index)
     curr_i = 0
     curr = @head
@@ -96,7 +72,6 @@ class LinkedList
     return nil if curr.nil?
     
     while !curr.nil? && (index > curr_i)
-      puts "looking at #{curr.data}"
       curr_i += 1
       curr = curr.next
     end
@@ -107,15 +82,31 @@ class LinkedList
       return nil
     end
   end
-  
-  
-  # I added this for fun
-  # O(1) space & time
-  def incr_length
-    @length += 1
-  end
-  
-  def decr_length
-    @length -= 1
-  end
 end
+
+list = LinkedList.new()
+
+puts list.get_last
+
+list.add_first(5)
+
+puts list.get_last.data
+
+list.add_first(4)
+list.add_first(3)
+list.add_first(2)
+
+puts list.get_last.data
+
+list.add_last(6)
+list.add_first(1)
+puts list.get_last.data
+
+
+puts
+curr = list.head
+while curr
+  print "#{curr.data} ->"
+  curr = curr.next
+end
+puts
