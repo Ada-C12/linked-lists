@@ -21,7 +21,7 @@ describe LinkedList do
     end
   end
 
-  xdescribe 'add_first & get_first' do
+  describe 'add_first & get_first' do
     it 'can add values to an empty list' do
       # Act
         @list.add_first(3)
@@ -51,12 +51,12 @@ describe LinkedList do
     end
   end
 
-  xdescribe "length" do
+  describe "length" do
     it "will return 0 for an empty list" do
       expect(@list.length).must_equal 0
     end
 
-    it "will return the length for nonempty lists" do
+    xit "will return the length for nonempty lists" do
       count = 0
       while count < 5
         @list.add_first(count)
