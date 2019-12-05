@@ -41,18 +41,46 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def add_last(data)
-
+    new_node = Node.new(data)
+    
+    if @head == nil
+      add_first(data)
+    else  
+      current = @head
+      while current.next != nil
+        current = current.next
+      end
+      current.next = new_node
+    end
   end
 
   # Time complexity - ?
   # Space complexity - ?
   def get_last
-    
+    current = @head
+
+    until current.next == nil
+      current = current.next
+    end
+
+    return current.data
   end
 
   # Time complexity - ?
   # Space complexity - ?
   def get_at_index(index)
+    element_position = 0
+    current = @head
+    last = length - 1
 
+    if index > last || index < 0
+      return nil
+    else
+      until index == element_position
+        current = current.next
+        element_position += 1
+      end
+      return current.data
+    end
   end
 end
