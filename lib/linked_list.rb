@@ -76,7 +76,7 @@ class LinkedList
   end
   
   # Time complexity - O(i) where i is the index
-  # Space complexity - ?
+  # Space complexity - constant
   def get_at_index(index)
     # initialize current to head
     current = @head
