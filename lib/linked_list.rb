@@ -75,9 +75,21 @@ class LinkedList
     end
   end
   
-  # Time complexity - ?
+  # Time complexity - O(i) where i is the index
   # Space complexity - ?
   def get_at_index(index)
-    
+    # initialize current to head
+    current = @head
+    # account for index being greater than list length
+    if index + 1 > length
+      return nil
+      # otherwise, move current to index
+    else 
+      index.times do  
+        current = current.next
+      end
+    end
+    # return value at indexed node
+    return current.data
   end
 end
