@@ -7,22 +7,22 @@ class LinkedList
     @head = nil
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(1), thanks to the power of linked lists we are not making any new data structures, just one new node.
   def add_first(data)
     node = Node.new(data, @head)
     @head = node
     return @head.data
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1)
+  # Space complexity - O(1)
   def get_first
     return @head.data if @head
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n), where n is the length of the list
+  # Space complexity - O(1)
   def length
     count = 0
     if @head
@@ -36,8 +36,8 @@ class LinkedList
     return count
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def add_last(data)
     if @head
       if @head.next
@@ -54,8 +54,8 @@ class LinkedList
     end
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n)
+  # Space complexity - O(1)
   def get_last
     if @head.next
       last_node = @head.next
@@ -70,8 +70,8 @@ class LinkedList
     end
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n), where `n` = index
+  # Space complexity - O(1)
   def get_at_index(index)
     if @head.nil? 
       return nil
