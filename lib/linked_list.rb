@@ -26,7 +26,7 @@ class LinkedList
   # Time complexity - O(n)
   # Space complexity - O(1)
   def length
-    return 0 if @head == nil
+    return 0 if @head.nil?
 
     length = 0
     current = @head
@@ -58,9 +58,10 @@ class LinkedList
   # Time complexity - O(n)
   # Space complexity - O(1)
   def get_last
-    current = @head
     return nil if @head.nil?
-    
+
+    current = @head
+
     until current.next.nil?
       current = current.next
     end
