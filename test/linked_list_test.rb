@@ -56,7 +56,7 @@ describe LinkedList do
       expect(@list.length).must_equal 0
     end
 
-    xit "will return the length for nonempty lists" do
+    it "will return the length for nonempty lists" do
       count = 0
       while count < 5
         @list.add_first(count)
@@ -66,7 +66,7 @@ describe LinkedList do
     end
   end
 
-  xdescribe "addLast & getLast" do
+  describe "addLast & getLast" do
     it "will add to the front if the list is empty" do
       @list.add_last(1)
       expect(@list.get_first).must_equal 1
@@ -91,7 +91,7 @@ describe LinkedList do
 
   end
 
-  xdescribe 'get_at_index' do
+  describe 'get_at_index' do
     it 'returns nil if the index is outside the bounds of the list' do
       expect(@list.get_at_index(3)).must_be_nil
     end
