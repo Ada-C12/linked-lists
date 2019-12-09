@@ -14,17 +14,23 @@ class LinkedList
     @head = Node.new(data, head)
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(1) because it is grabbing the first node in the list
+  # Space complexity - O(1) because it is returning one node
   def get_first
     return nil if head.nil?
     return @head.data
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n) where n is the length of the linked list
+  # Space complexity - O(1) because only a single number is being returning, the length of the list
   def length
-    return 0
+    count = 0
+    current = @head
+    until current.nil?
+      count += 1
+      current = current.next
+    end
+    return count
   end
 
   # Time complexity - ?
