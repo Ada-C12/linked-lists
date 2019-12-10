@@ -65,8 +65,8 @@ class LinkedList
     return current.data
   end
 
-  # Time complexity - 
-  # Space complexity - ?
+  # Time complexity - O(n) where N is the index
+  # Space complexity - ? O(1)
   def get_at_index(index)
     if head.nil?
       return nil
