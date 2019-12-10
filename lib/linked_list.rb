@@ -38,42 +38,43 @@ class LinkedList
   end
 
   # Time complexity - O(n) where n is the number of elements in the list
-  # Space complexity - ?
+  # Space complexity - O(1)
   def add_last(data)
+    new_node = Node.new(data, nil)
     if @head.nil?
-      @head = Node.new(data, head)
+      @head = new_node
     else
-      current = @head
+      current = head
+
       until current.next.nil?
         current = current.next
       end
+      current.next = new_node
     end
-    # current.next = Node.new(data, nil)
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - O(n) where N is number of elements in the list
+  # Space complexity - O(1)
   def get_last
-    if head.nil?
-      return nil
-    end
-    current = @head
+    current = head
 
     while current.next != nil
       current = current.next
     end
-    return current
+
+    return current.data
   end
 
-  # Time complexity - ?
+  # Time complexity - 
   # Space complexity - ?
   def get_at_index(index)
-    if @head.nil?
+    if head.nil?
       return nil
     end
-    current = @head
+    current = head
+
     index.times do 
-     current =  current.next
+      current = current.next
     end
     return current.data
   end
