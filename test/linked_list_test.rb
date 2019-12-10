@@ -66,11 +66,17 @@ describe LinkedList do
     end
   end
 
-  xdescribe "addLast & getLast" do
+  describe "addLast & getLast" do
+
     it "will add to the front if the list is empty" do
       @list.add_last(1)
       expect(@list.get_first).must_equal 1
     end
+
+    it "will return nil if the list is empty" do
+      expect(@list.get_last).must_be_nil
+    end
+      
 
     it "will put new items to the rear of the list" do
       @list.add_last(2)

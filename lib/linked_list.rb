@@ -26,19 +26,42 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def length
-    return 0
+    curr = @head
+    count = 0
+    until curr == nil
+      count += 1
+      curr = curr.next
+    end
+    return count
   end
 
   # Time complexity - ?
   # Space complexity - ?
   def add_last(data)
-
+    curr = @head
+    if @head == nil
+      @head = Node.new(data)
+    else
+      until curr.next == nil
+        curr = curr.next
+      end
+      curr.next = Node.new(data)
+    end
   end
 
   # Time complexity - ?
   # Space complexity - ?
   def get_last
+    curr = @head
 
+    if @head == nil
+      return nil
+    else
+      until curr.next == nil
+        curr = curr.next
+      end
+      return curr.data
+    end
   end
 
   # Time complexity - ?
