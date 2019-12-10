@@ -53,7 +53,6 @@ class LinkedList
   # Space complexity - ?
   def get_last
     curr = @head
-
     if @head == nil
       return nil
     else
@@ -67,6 +66,19 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def get_at_index(index)
-    
+    count = 0
+    curr = @head
+    if @head == nil
+      return nil
+    elsif index == 0
+      return @head.data
+    else
+      until count == index || curr.next == nil
+        curr = curr.next
+        count += 1
+      end
+    end
+    return curr.data
   end
+
 end
